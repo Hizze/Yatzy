@@ -1,16 +1,16 @@
 import pygame, sys, os, random
 
-notebookPath = os.path.abspath("Desktop/PythonProjects/Yatzy.py")
+assetsPath = os.path.dirname("C:/Users/knapp/Desktop/PythonProjects/Yatzy/Assets/")
 size = width, height = 1200,600
 screen = pygame.display.set_mode(size)
 pygame.display.set_caption("Yatzy")
 
-background = pygame.image.load(os.path.join(os.path.dirname(notebookPath), "background.png"))
-rollBtn = pygame.image.load(os.path.join(os.path.dirname(notebookPath), "roll.png"))
-lockBtn = pygame.image.load(os.path.join(os.path.dirname(notebookPath), "locked.png"))
-notLockBtn = pygame.image.load(os.path.join(os.path.dirname(notebookPath), "notlocked.png"))
-nextBtn = pygame.image.load(os.path.join(os.path.dirname(notebookPath), "next.png"))
-scoreTable = pygame.image.load(os.path.join(os.path.dirname(notebookPath), "scoreTable.png"))
+background = pygame.image.load(os.path.join(os.path.dirname(assetsPath), "Assets/background.png"))
+rollBtn = pygame.image.load(os.path.join(os.path.dirname(assetsPath), "Assets/roll.png"))
+lockBtn = pygame.image.load(os.path.join(os.path.dirname(assetsPath), "Assets/locked.png"))
+notLockBtn = pygame.image.load(os.path.join(os.path.dirname(assetsPath), "Assets/notlocked.png"))
+nextBtn = pygame.image.load(os.path.join(os.path.dirname(assetsPath), "Assets/next.png"))
+scoreTable = pygame.image.load(os.path.join(os.path.dirname(assetsPath), "Assets/scoreTable.png"))
 
 rollDiceAnimation, gameState = 1, 1
 amountOfRolls, firstPair, secondPair = 0, 0, 0
@@ -44,7 +44,7 @@ def drawScreen():
     screen.blit(scoreTable,(800,50))
     
     if newThrow == True and rollDiceAnimation <= 10:
-        diceFrame = pygame.image.load(os.path.join(os.path.dirname(notebookPath), "diceFrame%d.png" % rollDiceAnimation))
+        diceFrame = pygame.image.load(os.path.join(os.path.dirname(assetsPath), "Assets/diceFrame%d.png" % rollDiceAnimation))
         screen.blit(diceFrame,(0,50))
         pygame.time.delay(100)
         animateDice()
@@ -66,15 +66,15 @@ def drawScreen():
             newThrow = False
         else:
             for throw in throwList:
-                die1 = pygame.image.load(os.path.join(os.path.dirname(notebookPath), "die%d.png" % throw1))
+                die1 = pygame.image.load(os.path.join(os.path.dirname(assetsPath), "Assets/die%d.png" % throw1))
                 screen.blit(die1,(50,50))
-                die2 = pygame.image.load(os.path.join(os.path.dirname(notebookPath), "die%d.png" % throw2))
+                die2 = pygame.image.load(os.path.join(os.path.dirname(assetsPath), "Assets/die%d.png" % throw2))
                 screen.blit(die2,(200,50))
-                die3 = pygame.image.load(os.path.join(os.path.dirname(notebookPath), "die%d.png" % throw3))
+                die3 = pygame.image.load(os.path.join(os.path.dirname(assetsPath), "Assets/die%d.png" % throw3))
                 screen.blit(die3,(350,50))
-                die4 = pygame.image.load(os.path.join(os.path.dirname(notebookPath), "die%d.png" % throw4))
+                die4 = pygame.image.load(os.path.join(os.path.dirname(assetsPath), "Assets/die%d.png" % throw4))
                 screen.blit(die4,(500,50))
-                die5 = pygame.image.load(os.path.join(os.path.dirname(notebookPath), "die%d.png" % throw5))
+                die5 = pygame.image.load(os.path.join(os.path.dirname(assetsPath), "Assets/die%d.png" % throw5))
                 screen.blit(die5,(650,50))
                 pairText = myFont.render("Pair: " + str(pair), False, (0, 0, 0))
                 twoPairsText = myFont.render("Two pairs: " + str(twoPairs), False, (0, 0, 0))
